@@ -50,6 +50,8 @@ struct array2d_t {
     T* data_ptr;
     int64_t row_count;
     int64_t col_count;
+    // guessing we can call this on the data array like:
+    // data_ptr[row] and get the values
     CUDA_CALLABLE_MEMBER T* operator[] (int64_t index) {//returns a row
         return data_ptr + col_count*index;
     }
@@ -88,7 +90,7 @@ class edge_t {
 class csr_t {
     public:
         vid_t * offset;
-        char * Nebr;
+        vid_t * Nebr;
         vid_t dst_size;
         vid_t v;
         vid_t  e_count;
@@ -100,7 +102,7 @@ class csr_t {
             v        = a_vcount;
             dst_size = a_dstsize;
             offset   = (vid_t * ) a_offset;
-            Nebr     = (char * ) a_nebrs;
+            Nebr     = (vid_t * ) a_nebrs;
             e_count  = offset[v];
         }
 

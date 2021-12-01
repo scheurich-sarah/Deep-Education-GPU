@@ -56,7 +56,7 @@ if __name__ == "__main__":
     optimizer = torch.optim.Adam(itertools.chain(net.parameters()), lr=0.01, weight_decay=5e-4)
     all_logits = []
     start = datetime.datetime.now()
-    for epoch in range(200):
+    for epoch in range(2):
         logits = net(feature)
         #print ('check result')
         #print(logits)

@@ -1,0 +1,1 @@
+/usr/bin/c++ -fPIC -O2 -g -DNDEBUG -fopenmp -shared  -o kernel.cpython-38-x86_64-linux-gnu.so CMakeFiles/kernel.dir/kernel_pybind.cpp.o   -L/home/datalab/srevillar/Deep-Education-GPU/kernel  -Wl,-rpath,/home/datalab/srevillar/Deep-Education-GPU/kernel -lspmm 
